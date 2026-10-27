@@ -1,0 +1,417 @@
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap");
+:root{--agro-primary:#28704d;--agro-primary-dark:#174d35;--agro-secondary:#66a981;--agro-accent:#d7ebc1;--agro-bg-start:#f5f7f1;--agro-bg-end:#edf2e9;--agro-card:#fff;--agro-warning:#bd8533;--agro-danger:#bd5548;--agro-text:#23342b;--agro-muted:#506256;--radius-lg:1.15rem;--radius-md:.8rem;--shadow-soft:0 8px 28px rgba(37,62,46,.07);--shadow-lift:0 15px 38px rgba(37,62,46,.12)}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{min-height:100vh;margin:0;color:var(--agro-text);background:#f5f7f3;font-family:'DM Sans',system-ui,-apple-system,sans-serif;-webkit-font-smoothing:antialiased}h1,h2,h3,h4,h5,h6,.font-display{font-family:'Manrope','DM Sans',sans-serif;letter-spacing:-.035em;color:#20372a}.container{max-width:1200px}
+.navbar-agro{position:fixed!important;top:0!important;left:0!important;right:0!important;width:100%!important;height:68px!important;z-index:1040!important;background:rgba(255,255,255,.96);border-bottom:1px solid #e8eee8;backdrop-filter:blur(18px);box-shadow:0 3px 18px rgba(31,58,41,.04);padding:0}.navbar-agro .container{max-width:1360px}.navbar-agro .navbar-brand{color:var(--agro-primary-dark)!important;font-family:'Manrope',sans-serif;font-weight:800;letter-spacing:-.045em;font-size:1.35rem;gap:.55rem}.navbar-brand svg{padding:4px;box-sizing:content-box;border-radius:11px;background:#e9f3e9;color:var(--agro-primary)}.nav-pill{display:flex;align-items:center;gap:.42rem;color:#65766a!important;font-size:.875rem;font-weight:600;padding:.58rem .78rem!important;border-radius:10px;transition:background .2s,color .2s,transform .2s;white-space:nowrap}.nav-pill:hover{color:var(--agro-primary-dark)!important;background:#f2f6f1}.nav-pill.active{background:#eaf3e9;color:var(--agro-primary-dark)!important}.navbar-agro .btn-light{color:#506256;border:1px solid #e4ebe4;background:#fff;border-radius:10px;padding:.55rem .8rem;font-weight:600}.navbar-agro .btn-light:hover{background:#f5f8f4}
+.btn-agro{background:var(--agro-primary);border:1px solid var(--agro-primary);color:#fff;font-weight:700;padding:.76rem 1.25rem;border-radius:var(--radius-md);box-shadow:0 5px 13px rgba(40,112,77,.18);transition:transform .18s,box-shadow .18s,background .18s;display:inline-flex;align-items:center;justify-content:center;gap:.5rem}.btn-agro:hover:not(:disabled){background:var(--agro-primary-dark);border-color:var(--agro-primary-dark);transform:translateY(-1px);box-shadow:0 8px 18px rgba(40,112,77,.23);color:#fff}.btn-agro:disabled{opacity:.6;cursor:not-allowed}.btn-agro-outline{background:#fff;border:1px solid #cddacf;color:var(--agro-primary);font-weight:700;padding:.68rem 1.1rem;border-radius:var(--radius-md)}.btn-agro-outline:hover{background:#f2f7f1}
+.card-agro{background:#fff;border:1px solid #e9eee8;border-radius:var(--radius-lg);box-shadow:var(--shadow-soft);padding:1.45rem;height:100%;transition:box-shadow .2s,transform .2s}.card-agro.hoverable:hover{box-shadow:var(--shadow-lift);transform:translateY(-3px)}.stat-tile{text-align:left;padding:1.2rem;display:flex;flex-direction:column;align-items:flex-start;gap:.45rem}.stat-icon-wrap{width:42px;height:42px;border-radius:13px;display:flex;align-items:center;justify-content:center;background:#edf5ec;color:var(--agro-primary)}.stat-tile .stat-value{font-family:'Manrope',sans-serif;font-size:1.75rem;font-weight:800;color:var(--agro-text)}.stat-tile .stat-label{color:var(--agro-muted);font-size:.85rem;font-weight:600}.soil-bar-track{background:#e9eee8;border-radius:9px;height:9px;width:100%;overflow:hidden}.soil-bar-fill{background:linear-gradient(90deg,#91c587,var(--agro-primary));height:100%;border-radius:9px;transition:width .8s cubic-bezier(.22,1,.36,1)}.confidence-ring{position:relative;width:76px;height:76px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:'Manrope',sans-serif;font-weight:800;font-size:.95rem;color:var(--agro-primary-dark);flex-shrink:0}.confidence-ring::before{content:'';position:absolute;inset:6px;border-radius:50%;background:#fff}.confidence-ring span{position:relative;z-index:1}.crop-icon-badge{width:54px;height:54px;border-radius:16px;display:flex;align-items:center;justify-content:center;flex-shrink:0}.forecast-strip{display:flex;gap:.7rem;overflow-x:auto;padding:.2rem 0 .65rem;scrollbar-width:thin}.forecast-day{min-width:112px;background:#f8faf7;border:1px solid #edf1eb;border-radius:var(--radius-md);padding:1rem .7rem;text-align:center;transition:transform .15s,box-shadow .15s}.forecast-day:hover{transform:translateY(-2px);box-shadow:var(--shadow-soft)}
+.landing-hero{position:relative;overflow:hidden;background:linear-gradient(125deg,#1b5038 0%,#28704d 62%,#598a56 100%);color:#fff;border-radius:0 0 2rem 2rem;padding:5rem 1.5rem 5.4rem}.landing-hero h1,.landing-hero h2,.landing-hero h3{color:#fff}.landing-hero .lead{font-size:1.22rem;color:rgba(255,255,255,.9)}.landing-hero .container{max-width:1180px}.hero-glow{position:absolute;border-radius:50%;filter:blur(60px);opacity:.27;pointer-events:none}.hero-badge{display:inline-flex;align-items:center;gap:.5rem;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.22);padding:.45rem .85rem;border-radius:999px;font-size:.82rem;font-weight:700;margin-bottom:1.3rem}.feature-icon-wrap{width:48px;height:48px;border-radius:14px;display:flex;align-items:center;justify-content:center;background:#edf5ec;color:var(--agro-primary);margin-bottom:1rem}
+.form-control-lg-touch{padding:.82rem .95rem;font-size:.98rem;border-radius:var(--radius-md);border:1px solid #dfe7dd;background:#fff;color:#0f172a;transition:border-color .15s,box-shadow .15s}.form-control-lg-touch:focus{border-color:#6da77d;box-shadow:0 0 0 4px rgba(102,169,129,.15);color:#0f172a}.form-control-lg-touch::placeholder,.form-control::placeholder{color:#64748b!important;opacity:1!important}.form-label{color:#1e293b;font-size:.88rem;font-weight:700;margin-bottom:.48rem}.upload-dropzone{border:1.5px dashed #9abb9e;border-radius:var(--radius-lg);padding:2.5rem 1rem;text-align:center;background:#f7faf5;cursor:pointer;transition:background .15s,border-color .15s,transform .1s}.upload-dropzone.drag-active{background:#edf6eb;border-color:var(--agro-primary);transform:scale(1.01)}.confidence-badge{display:inline-flex;align-items:center;gap:.35rem;background:#edf5ec;color:var(--agro-primary);font-weight:700;padding:.35rem .8rem;border-radius:999px;font-size:.88rem}.alert{border:0;border-radius:var(--radius-md)}.table{--bs-table-bg:transparent}.table thead th{color:#738176;font-size:.75rem;text-transform:uppercase;letter-spacing:.06em;border-bottom-color:#e9eee8}.table td,.table th{padding:.85rem .75rem;vertical-align:middle}.text-muted{color:var(--agro-muted)!important}
+::-webkit-scrollbar{height:8px;width:8px}::-webkit-scrollbar-thumb{background:#cbd8cb;border-radius:999px}
+.dashboard-shell{display:flex;min-height:calc(100vh - 68px);background:#f6f8f5}.dashboard-sidebar{width:240px;flex:0 0 240px;position:sticky;top:68px;height:calc(100vh - 68px);background:#fff;border-right:1px solid #edf0eb;padding:1.1rem 1rem;display:flex;flex-direction:column;justify-content:space-between;z-index:5}.dashboard-sidebar-links{display:grid;gap:.45rem}.dashboard-side-link{display:flex;align-items:center;gap:.75rem;padding:.72rem .85rem;border-radius:10px;color:#53645a;text-decoration:none;font-size:.86rem;font-weight:600;transition:background .18s,color .18s}.dashboard-side-link:hover,.dashboard-side-link.active{background:#edf5ec;color:#1f6a43}.dashboard-sidebar-bottom{display:grid;gap:.2rem}.profile-prompt{border:1px solid #e7ece5;border-radius:12px;padding:.85rem .75rem;text-align:center;margin-bottom:.7rem;display:flex;align-items:center;flex-direction:column;font-size:.78rem}.profile-prompt-illustration{height:60px;width:100%;border-radius:9px;background:linear-gradient(160deg,#f4f6eb,#e7f0de);color:#387949;display:grid;place-items:center;margin-bottom:.6rem}.profile-prompt strong{font-size:.78rem}.profile-prompt span{color:#78877c}.profile-prompt .btn{font-size:.72rem;padding:.38rem .7rem}.dashboard-main{min-width:0;flex:1}.dashboard-hero{min-height:220px;padding:2.2rem clamp(1.2rem,3vw,2.6rem);display:flex;align-items:center;justify-content:space-between;gap:1.5rem;position:relative;overflow:hidden;background:linear-gradient(90deg,rgba(255,255,255,.95) 0%,rgba(255,255,255,.86) 38%,rgba(255,255,255,.48) 68%,rgba(255,255,255,.12) 100%),url('/dashboard-bg.png') center right/cover no-repeat;border-bottom:1px solid #e2ebd0;box-shadow:inset 0 -10px 24px -12px rgba(40,112,77,.1)}.dashboard-hero:before{content:'';position:absolute;inset:0;background:linear-gradient(180deg,rgba(255,255,255,.25) 0%,transparent 50%,rgba(255,255,255,.35) 100%);pointer-events:none}.dashboard-hero:after{display:none}.dashboard-hero-copy,.dashboard-location-control{position:relative;z-index:1}.dashboard-eyebrow{display:flex;align-items:center;gap:.4rem;text-transform:capitalize;color:#245b3a;font-weight:700;font-size:.9rem;margin-bottom:.25rem}.dashboard-hero h1{font-size:clamp(1.65rem,2.6vw,2.35rem);font-weight:800;margin:0 0 .75rem;color:#123924;text-shadow:0 1px 2px rgba(255,255,255,.75)}.dashboard-hero h1 span{font-size:.8em}.dashboard-location{display:flex;align-items:center;gap:.45rem;color:#355240;font-size:.92rem;font-weight:600}.dashboard-location-control .d-flex{justify-content:flex-end}.dashboard-location-control .position-relative{max-width:230px!important}.dashboard-location-control input{background:rgba(255,255,255,.95);border-color:#d5e2d1;backdrop-filter:blur(6px);box-shadow:0 4px 14px rgba(0,0,0,.04)}.dashboard-location-control .btn{white-space:nowrap;box-shadow:0 4px 12px rgba(40,112,77,.22)}.dashboard-content{max-width:1440px;margin:0 auto;padding:1.4rem clamp(1rem,2.4vw,2.2rem) 2.5rem}.dashboard-content .forecast-strip{display:flex;gap:.75rem;overflow-x:auto;padding:.3rem 0 .7rem;scrollbar-width:thin}.dashboard-content .forecast-day{min-width:124px;flex-shrink:0}.dashboard-content .alert{margin-bottom:1.2rem}
+
+.app-sidebar{position:fixed;z-index:1020;left:0;top:68px;bottom:0;width:240px;background:#fff;border-right:1px solid #edf0eb;padding:1.1rem 1rem;display:flex;flex-direction:column;justify-content:space-between;overflow-y:auto}.app-sidebar-links{display:grid;gap:.45rem}.app-sidebar-link{display:flex;align-items:center;gap:.75rem;padding:.72rem .85rem;border-radius:10px;color:#53645a;text-decoration:none;font-size:.86rem;font-weight:600;transition:background .18s,color .18s;white-space:nowrap}.app-sidebar-link:hover,.app-sidebar-link.active{background:#edf5ec;color:#1f6a43}.app-sidebar-bottom{display:grid;gap:.2rem}.app-main-viewport{padding-top:68px;min-height:100vh}.app-content-with-sidebar{margin-left:240px;min-height:calc(100vh - 68px)}.navbar-agro .navbar-nav.me-auto.ms-3{display:none!important}.dashboard-shell{display:block;min-height:0}.dashboard-main{min-width:0;width:100%}
+
+.language-option{display:flex;align-items:center;gap:.45rem;color:#64766a;padding:.35rem .55rem;border:1px solid #e6ece5;border-radius:10px;background:#fff}.language-option select{border:0;background:transparent;color:#405449;font:inherit;font-size:.82rem;font-weight:600;outline:none;cursor:pointer}.mobile-language-option{width:max-content;margin:.35rem 0}.language-option:focus-within{outline:3px solid rgba(102,169,129,.2)}
+
+html[lang='hi'] body{font-family:'Noto Sans Devanagari','Nirmala UI','DM Sans',sans-serif}html[lang='hi'] h1,html[lang='hi'] h2,html[lang='hi'] h3,html[lang='hi'] h4,html[lang='hi'] h5,html[lang='hi'] h6{font-family:'Noto Sans Devanagari','Nirmala UI','Manrope',sans-serif}
+
+/* ==========================================================================
+   AGROAI COMPREHENSIVE RESPONSIVE MOBILE MEDIA QUERIES
+   ========================================================================== */
+
+/* Base Mobile Polish & Utility Classes */
+html, body, #root {
+  overflow-x: hidden !important;
+  width: 100%;
+  max-width: 100vw;
+  position: relative;
+  -webkit-text-size-adjust: 100%;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.table-responsive {
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: thin;
+  border-radius: 12px;
+}
+
+button, select, input, .btn {
+  touch-action: manipulation;
+}
+
+/* Hide scrollbars for pill strips */
+.soil-presets-strip,
+.forecast-strip,
+.settings-nav-tabs,
+.mandi-presets-scroll {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+.soil-presets-strip::-webkit-scrollbar,
+.forecast-strip::-webkit-scrollbar,
+.settings-nav-tabs::-webkit-scrollbar,
+.mandi-presets-scroll::-webkit-scrollbar {
+  display: none;
+}
+
+/* Tablet & Large Mobile Breakpoint (max-width: 1100px) */
+@media (max-width: 1100px) {
+  .dashboard-sidebar,
+  .app-sidebar {
+    width: 200px !important;
+    padding-inline: 0.75rem !important;
+  }
+  .dashboard-side-link,
+  .app-sidebar-link {
+    font-size: 0.8rem !important;
+    gap: 0.6rem !important;
+    padding-inline: 0.65rem !important;
+  }
+  .app-content-with-sidebar {
+    margin-left: 200px !important;
+  }
+}
+
+/* Mobile & Phablet Breakpoint (max-width: 767.98px) */
+@media (max-width: 767.98px) {
+  /* Prevent iOS browser auto-zoom when focusing inputs */
+  input[type="text"],
+  input[type="number"],
+  input[type="email"],
+  input[type="password"],
+  input[type="search"],
+  select,
+  textarea {
+    font-size: 16px !important;
+  }
+
+  .dashboard-sidebar,
+  .app-sidebar {
+    display: none !important;
+  }
+
+  .app-content-with-sidebar {
+    margin-left: 0 !important;
+    width: 100% !important;
+  }
+
+  .app-main-viewport {
+    padding-top: 64px !important;
+    padding-bottom: calc(76px + env(safe-area-inset-bottom, 0px)) !important;
+    min-height: 100vh;
+  }
+
+  .navbar-agro {
+    height: 64px !important;
+  }
+
+  .container,
+  .container-fluid {
+    padding-left: 0.85rem !important;
+    padding-right: 0.85rem !important;
+  }
+
+  .container.py-4,
+  .container.py-5 {
+    padding-top: 1rem !important;
+    padding-bottom: 1.5rem !important;
+  }
+
+  /* Universal Card Padding */
+  .card-agro {
+    padding: 1.1rem !important;
+    border-radius: 1rem !important;
+  }
+
+  .btn-agro,
+  .btn-agro-outline {
+    padding: 0.68rem 1rem !important;
+  }
+
+  /* Hero Headers across pages */
+  .dashboard-hero {
+    min-height: 0;
+    align-items: flex-start;
+    flex-direction: column;
+    padding: 1.35rem 1rem !important;
+    gap: 1rem;
+    background: linear-gradient(180deg, rgba(255,255,255,.96) 0%, rgba(255,255,255,.9) 55%, rgba(255,255,255,.78) 100%), url('/dashboard-bg.png') center/cover no-repeat;
+    border-radius: 0 0 1.25rem 1.25rem;
+  }
+
+  .dashboard-hero-copy {
+    width: 100%;
+  }
+
+  .dashboard-location-control {
+    width: 100%;
+  }
+
+  .location-selector-form {
+    width: 100% !important;
+    flex-direction: column !important;
+    align-items: stretch !important;
+  }
+
+  .location-input-wrap {
+    min-width: 0 !important;
+    max-width: none !important;
+    width: 100% !important;
+  }
+
+  .location-submit-btn {
+    width: 100% !important;
+  }
+
+  .dashboard-content {
+    padding: 0.85rem 0.5rem 2rem !important;
+  }
+
+  /* Forecast Strip Momentum */
+  .forecast-strip {
+    -webkit-overflow-scrolling: touch;
+    scroll-snap-type: x proximity;
+    gap: 0.55rem;
+    padding-bottom: 0.5rem;
+  }
+
+  .forecast-day {
+    scroll-snap-align: start;
+    min-width: 110px;
+    padding: 0.85rem 0.55rem;
+  }
+
+  /* Chart Wrappers */
+  .weather-chart-wrap,
+  .market-chart-wrap {
+    height: 250px !important;
+    min-height: 250px !important;
+  }
+
+  /* Landing Page Mobile Hero */
+  .landing-hero-section {
+    padding: 2.2rem 1rem 3.5rem !important;
+    border-radius: 0 0 1.5rem 1.5rem;
+  }
+
+  .landing-hero-actions {
+    flex-direction: column;
+    width: 100%;
+    gap: 0.75rem !important;
+  }
+
+  .landing-hero-actions .btn {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .landing-badge-weather {
+    position: absolute !important;
+    top: 10px !important;
+    right: 10px !important;
+    max-width: calc(100% - 20px) !important;
+  }
+
+  .landing-badge-crop {
+    position: absolute !important;
+    bottom: 10px !important;
+    left: 10px !important;
+    max-width: calc(100% - 20px) !important;
+  }
+
+  /* Floating Chat Launcher (Positioned above bottom nav bar on mobile) */
+  .floating-chat-btn {
+    bottom: calc(72px + env(safe-area-inset-bottom, 0px)) !important;
+    right: 14px !important;
+    width: 48px !important;
+    height: 48px !important;
+    border-radius: 16px !important;
+    z-index: 1045 !important;
+  }
+
+  /* Floating Chat Window Sheet on Mobile */
+  .floating-chat-window {
+    bottom: calc(68px + env(safe-area-inset-bottom, 0px)) !important;
+    right: 8px !important;
+    left: 8px !important;
+    width: auto !important;
+    max-width: none !important;
+    max-height: calc(100vh - 145px) !important;
+    border-radius: 20px !important;
+    z-index: 1046 !important;
+  }
+
+  /* Soil Mode Selector on Mobile */
+  .soil-mode-selector {
+    width: 100% !important;
+    display: flex !important;
+  }
+
+  .soil-mode-selector .btn {
+    flex: 1 1 50% !important;
+    text-align: center !important;
+    justify-content: center !important;
+  }
+
+  /* Table styling on mobile */
+  .table td, .table th {
+    white-space: nowrap !important;
+    padding: 0.75rem 0.65rem !important;
+  }
+}
+
+/* Standard Mobile Screens (max-width: 575.98px) */
+@media (max-width: 575.98px) {
+  /* Typography scale for mobile screens */
+  h1, .display-5 {
+    font-size: 1.55rem !important;
+    line-height: 1.25 !important;
+  }
+
+  h2 {
+    font-size: 1.35rem !important;
+  }
+
+  h3 {
+    font-size: 1.2rem !important;
+  }
+
+  h4, h5 {
+    font-size: 1.05rem !important;
+  }
+
+  /* Card padding tighter for maximum content space */
+  .card-agro {
+    padding: 0.95rem !important;
+    border-radius: 0.95rem !important;
+  }
+
+  /* Stat tile adjustments */
+  .stat-tile {
+    padding: 0.85rem !important;
+  }
+
+  .stat-tile .stat-value {
+    font-size: 1.35rem !important;
+  }
+
+  /* Recommendation AI Chat Feed & Messages */
+  .ai-chat-bubble-wrap {
+    max-width: 93% !important;
+  }
+
+  .ai-chat-feed {
+    min-height: 240px !important;
+    max-height: calc(100vh - 220px) !important;
+    padding: 0.75rem !important;
+  }
+
+  /* Crop Recommendation Hero Card */
+  .crop-hero-banner {
+    padding: 1.2rem 1rem !important;
+  }
+
+  .crop-hero-info {
+    width: 100% !important;
+  }
+
+  .crop-confidence-gauge {
+    width: 100% !important;
+    justify-content: center !important;
+    margin-top: 0.5rem !important;
+  }
+
+  /* Mandi Table & Search Toolbar */
+  .mandi-filter-bar {
+    padding: 0.75rem !important;
+  }
+
+  .mandi-filter-bar .row > div {
+    margin-bottom: 0.4rem;
+  }
+
+  .mandi-stat-tile {
+    padding: 0.75rem !important;
+  }
+
+  .mandi-stat-tile .h4 {
+    font-size: 1.1rem !important;
+  }
+
+  /* Disease Scanner Upload Dropzone */
+  .upload-dropzone {
+    padding: 1.6rem 0.85rem !important;
+  }
+
+  /* Navbar Brand & Actions Cluster */
+  .navbar-agro .navbar-brand {
+    font-size: 1.15rem !important;
+    gap: 0.4rem !important;
+  }
+
+  .navbar-agro-sprout-icon {
+    width: 32px !important;
+    height: 32px !important;
+  }
+
+  .navbar-lang-pill {
+    padding: 0.2rem 0.45rem !important;
+  }
+
+  .navbar-lang-pill select {
+    font-size: 0.74rem !important;
+  }
+
+  /* Soil Presets Strip */
+  .soil-presets-strip {
+    display: flex;
+    overflow-x: auto;
+    flex-wrap: nowrap !important;
+    padding-bottom: 0.4rem;
+    -webkit-overflow-scrolling: touch;
+    gap: 0.45rem;
+  }
+
+  .soil-preset-btn {
+    flex-shrink: 0;
+    white-space: nowrap;
+  }
+
+  /* Settings Page Nav Tabs */
+  .settings-nav-tabs {
+    flex-wrap: nowrap !important;
+    overflow-x: auto !important;
+    -webkit-overflow-scrolling: touch;
+    padding-bottom: 0.25rem;
+  }
+
+  .settings-nav-tabs button {
+    flex-shrink: 0;
+    white-space: nowrap;
+    padding: 0.45rem 0.75rem !important;
+  }
+}
+
+/* Small / Compact Mobile Screens (max-width: 380px) */
+@media (max-width: 380px) {
+  .navbar-agro .navbar-brand span.fw-extrabold {
+    font-size: 1rem !important;
+  }
+
+  .navbar-agro .navbar-brand .badge {
+    display: none !important;
+  }
+
+  .card-agro {
+    padding: 0.8rem !important;
+  }
+
+  .btn {
+    font-size: 0.78rem !important;
+  }
+
+  .dashboard-hero h1 {
+    font-size: 1.35rem !important;
+  }
+}
+

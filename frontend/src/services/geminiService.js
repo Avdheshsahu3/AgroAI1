@@ -1,7 +1,7 @@
 import { recommendationApi } from './api'
 
 // Gemini API Key configured in AgroAI
-const GEMINI_API_KEY = import.meta.env.VITE_GEMINI_API_KEY || ''
+const GEMINI_API_KEY = import.meta.env.VITE_GEMINI_API_KEY || 'AQ.Ab8RN6KAKX_y6olAzzGZEcqFoB6kFDywXqjaFZIeYBTnvRCLjw'
 
 // High-speed candidate models supporting generateContent
 const GEMINI_MODELS = [

@@ -1,8 +1,12 @@
 import axios from 'axios'
 
-const BASE_URL =
-  import.meta.env.VITE_API_BASE_URL ||
-  (import.meta.env.PROD ? 'https://agroai1.onrender.com/api' : 'http://localhost:8080/api')
+const configuredBaseUrl = import.meta.env.VITE_API_BASE_URL
+const localApiUrl = /^https?:\/\/(localhost|127\.0\.0\.1)(:\d+)?(?:\/|$)/i
+const BASE_URL = import.meta.env.PROD
+  ? configuredBaseUrl && !localApiUrl.test(configuredBaseUrl)
+    ? configuredBaseUrl
+    : 'https://agroai1.onrender.com/api'
+  : configuredBaseUrl || 'http://localhost:8080/api'
 
 const client = axios.create({
   baseURL: BASE_URL,
